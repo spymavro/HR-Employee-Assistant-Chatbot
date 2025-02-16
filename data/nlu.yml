@@ -1,0 +1,486 @@
+version: "3.1"
+nlu:
+
+######################################################################
+# Basic Intents
+######################################################################
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hello!
+    - good to see you
+    - hi there
+    - hey there
+    - greetings!
+    - howdy
+    - whats up
+    - what's up?
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - see ya
+    - farewell
+    - later
+    - bye for now
+    - catch you later
+
+- intent: thanks
+  examples: |
+    - Thanks
+    - thanks
+    - Thank you
+    - thank you
+    - Thank you very much
+    - thank you very much
+    - Thank you so much
+    - thank you so much
+    - That's great, thank you very much
+    - That's great, thank so much
+    - that's great, thank you very much
+    - that's great, thank so much
+    - That's great, thanks
+    - that's great, thanks
+    - Great, thanks
+    - Great, thank you
+    - Fine, thanks
+    - Fine, thank you
+    - No thanks
+    - no thanks
+    - No, thanks
+    - no, thanks
+    - No thank you
+    - no thank you
+    - No, thank you
+    - no, thank you
+    - I am fine, thanks
+    - I am good, thanks
+    - i am fine, thank you
+    - i am good, thank you
+    - I am okay, thanks
+    - i am okay, thank you
+    - No I don't want to make any other update
+    - no I don't want to make any other update
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - top of the world
+    - never been better
+    - fantastic
+    - really good
+    - loving life
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so saad
+    - so sad
+    - not feeling great
+    - kinda down
+    - not the best day
+    - feeling blue
+    - could be better
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you real?
+    - are you just a computer?
+    - are you intelligent?
+    - do you have feelings?
+    - am I conversing with a bot?
+
+- intent: provide_name
+  examples: |
+    - My name is [Irini](person_name)
+    - my name is [Irini](person_name)
+    - My name is [Mike](person_name)
+    - My name is [mike](person_name)
+    - I'm [George Wilson](person_name)
+    - They call me [Smith](person_name)
+    - they call me [Smith](person_name)
+    - I'm known as [AliceInHR](person_name)
+    - My username is [John_Doe85](person_name)
+    - my username is [John_Doe85](person_name)
+    - Hello, I'm [Nikolaou](person_name)
+    - hello, I'm [Nikolaou](person_name)
+    - I'm Ms. [Brown](person_name)
+    - This is [GregSmith01](person_name)
+    - this is [GregSmith01](person_name)
+    - [Irini](person_name)
+    - [irini](person_name)
+    - [Nikolaou](person_name)
+    - [nikolaou](person_name)
+    - [John_Doe85](person_name)
+    - [john_doe85](person_name)
+    - [GregSmith01](person_name)
+    - [gregsmith01](person_name)
+    - [Spyros](person_name)
+    - [spyros](person_name)
+    - [John](person_name)
+    - [john](person_name)
+    - [Mike](person_name)
+    - [mike](person_name)
+
+######################################################################
+# Personal Information
+######################################################################
+
+- intent: ask_details
+  examples: |
+    - Please provide my account details
+    - Please provide the details for my account
+    - Please give details for an employee
+    - Account details
+    - account details
+    - Personal details
+    - personal details
+    - Provide my account details
+    - Give me my account details
+    - Give me the details for my account
+    - Details for an employee
+    - Details
+    - details
+    - Show me my account details
+    - Show me the details for my account
+    - Show me my personal details
+    - show me my personal details
+    - Where can I view my general profile information?
+    - where can I view my general profile information?
+
+- intent: provide_id
+  examples: |
+    - The ID of my account is [127](employee_id)
+    - Employee ID [127](employee_id)
+    - [127](employee_id)
+    - The ID is [127](employee_id)
+    - the ID is [127](employee_id
+    - My ID is [127](employee_id)
+    - The id of my account is [127](employee_id)
+    - The id is [127](employee_id)
+    - The ID of my account is [1](employee_id)
+    - The ID of my account is [5](employee_id)
+    - The ID of my account is [10](employee_id)
+    - The ID is [1](employee_id)
+    - The ID is [5](employee_id)
+    - The ID is [10](employee_id)
+    - [1](employee_id)
+    - [5](employee_id)
+    - [10](employee_id)
+
+- intent: fetch_employee_details
+  examples: |
+    - Show details for employee [127](employee_id)
+    - Get info for [127](employee_id)
+    - Employee [127](employee_id) details
+    - Employee [127](employee_id)
+    - employee [127](employee_id) details
+    - Show details for employee [1](employee_id)
+    - Show details for employee [2](employee_id)
+    - Show details for employee [3](employee_id)
+    - Show details for employee [4](employee_id)
+    - Show details for employee [5](employee_id)
+    - Show details for employee [6](employee_id)
+    - Show details for employee [7](employee_id)
+    - Show details for employee [8](employee_id)
+    - Show details for employee [9](employee_id)
+    - Show details for employee [10](employee_id)
+
+- intent: ask_update
+  examples: |
+    - I want to update my account details
+    - Please update my account details
+    - Please update the details for my account
+    - Update account details
+    - update account details
+    - Update personal details
+    - update personal details
+    - Update details for an employee
+    - Update details
+    - update details
+    - How can I update my general profile information?
+    - how can I update my general profile information?
+
+- intent: update_employee_details
+  examples: |
+    - I want to update the [country](field_name) for employee [10](employee_id) to [Greece](field_value)
+    - I want to update the [country](field_name) for employee [10](employee_id) to [greece](field_value)
+    - I want to update the [email](field_name) for employee [10](employee_id) to [christopher.miller@horilla.com](field_value)
+    - I want to update the [email](field_name) for employee [10](employee_id) to [christopher.miller@gmail.com](field_value)
+    - I want to change the [address](field_name) for employee [9](employee_id) to [123 Elm Street](field_value)
+    - I want to change the [address](field_name) for employee [9](employee_id) to [Elm 123 Street](field_value)
+    - I want to change the [address](field_name) for employee [9](employee_id) to [23 Finley Street](field_value)
+    - I want to change the [address](field_name) for employee [9](employee_id) to [Finley 23 Street](field_value)
+    - I want to change the [address](field_name) for employee [9](employee_id) to [1 Amalias Street](field_value)
+    - I want to change the [address](field_name) for employee [9](employee_id) to [Amalias 1 Street](field_value)
+    - I want to change the [address](field_name) for employee [9](employee_id) to [Omirou 44 Street](field_value)
+    - I want to change the [address](field_name) for employee [9](employee_id) to [44 Omirou Street](field_value)
+    - I want to update the [is_active](field_name) for employee [10](employee_id) to [True](field_value)
+    - I want to update the [is_active](field_name) for employee [10](employee_id) to [true](field_value)
+    - I want to update the [is_active](field_name) for employee [10](employee_id) to [False](field_value)
+    - I want to update the [is_active](field_name) for employee [10](employee_id) to [false](field_value)
+    - I want to update the [is_active](field_name) for employee [10](employee_id) to [None](field_value)
+    - I want to update the [is_active](field_name) for employee [10](employee_id) to [none](field_value)
+    - I want to update the [badge_id](field_name) for employee [10](employee_id) to [PEP19](field_value)
+    - I want to update the [employee_work_info_id](field_name) for employee [10](employee_id) to [11](field_value)
+    - I want to update the [emergency_contact](field_name) for employee [10](employee_id) to [None](field_value)
+    - I want to update the [emergency_contact](field_name) for employee [10](employee_id) to [none](field_value)
+    - I want to change the [address](field_name) for employee [9](employee_id) to [123 Elm Street](field_value)
+    - I want to update the [employee_work_info_id](field_name) for employee [10](employee_id) to [34](field_value)
+    - I want to change the [phone](field_name) for employee [9](employee_id) to [6934987643](field_value)
+    - I would like to update the [country](field_name) for employee [10](employee_id) to [Greece](field_value)
+    - I would like change the [address](field_name) for employee [9](employee_id) to [123 Elm Street](field_value)
+    - I would like to update the [employee_work_info_id](field_name) for employee [10](employee_id) to [34](field_value)
+    - I would like change the [phone](field_name) for employee [9](employee_id) to [6934987643](field_value)
+    - Update the [country](field_name) for employee [10](employee_id) to [Greece](field_value)
+    - Change the [address](field_name) for employee [9](employee_id) to [123 Elm Street](field_value)
+    - Update the [employee_work_info_id](field_name) for employee [10](employee_id) to [34](field_value)
+    - Change the [phone](field_name) for employee [9](employee_id) to [6934987643](field_value)
+    - The ID of the employee is [9](employee_id) and I want to update the [country](field_name) to [Greece](field_value)
+    - The ID is [9](employee_id) and I want to update the [address](field_name) to [Finley 23 Street](field_value)
+    - the ID of the employee is [9](employee_id) and I want to update the [country](field_name) to [greece](field_value)
+    - the ID is [9](employee_id) and I want to update the [address](field_name) to [23 Finley Street](field_value)
+    - ID is [9](employee_id) and I want to update the [address](field_name) to [23 Finley Street](field_value)
+    - id is [9](employee_id) and I want to update the [address](field_name) to [23 Finley Street](field_value)
+
+- intent: more_updates
+  examples: |
+    - Yes
+    - yes
+    - Y
+    - y
+    - Yes please
+    - yes please
+    - Yes I want to make more updates
+    - Yes I want to update more
+    - Yes I want to change more
+
+- intent: no_more_updates
+  examples: |
+    - No
+    - no
+    - N
+    - n
+    - No, thanks
+    - No, thank you
+    - No thanks
+    - No thank you
+    - no, thanks
+    - no, thank you
+    - no thanks
+    - no thank you
+    - I don't want to make more updates
+    - I don't want to change something else
+
+######################################################################
+# Job Positions and Leave Types
+######################################################################
+
+- intent: list_job_positions
+  examples: |
+    - Show me all job positions
+    - What positions exist here?
+    - I'd like to see the company job positions
+    - List job positions
+    - Could you list the available positions?
+
+- intent: ask_leave_types
+  examples: |
+    - What leave types can I request?
+    - Tell me all the leave types
+    - I'd like to see the different types of leaves
+    - Could you show me the leave categories?
+
+######################################################################
+#  Policies
+######################################################################
+
+#Code of Conduct Policy
+- intent: ask_code_of_conduct
+  examples: |
+    - What is the code of conduct?
+    - what is the code of conduct?
+    - Can you explain the professional behavior expectations?
+    - can you explain the professional behavior expectations?
+    - What are the rules for ethical behavior at work?
+    - what are the rules for ethical behavior at work?
+    - Tell me about the company's conduct policy.
+    - tell me about the company's conduct policy.
+
+#Information Security Policy
+- intent: ask_information_security
+  examples: |
+    - How do I protect company data?
+    - how do I protect company data?
+    - What are the information security policies?
+    - what are the information security policies?
+    - How should I handle sensitive information?
+    - how should I handle sensitive information?
+    - What are the rules for data security?
+    - what are the rules for data security?
+
+#Remote Work Policy
+- intent: ask_remote_work_policy
+  examples: |
+    - What are the guidelines for remote work?
+    - what are the guidelines for remote work?
+    - How should I work from home?
+    - how should I work from home?
+    - What are the expectations for remote employees?
+    - what are the expectations for remote employees?
+    - Tell me about the remote work policy.
+    - tell me about the remote work policy.
+
+#Data Privacy Policy
+- intent: ask_data_privacy
+  examples: |
+    - How does the company handle personal data?
+    - how does the company handle personal data?
+    - What are the data privacy rules?
+    - what are the data privacy rules?
+    - How do we comply with GDPR and CCPA?
+    - how do we comply with GDPR and CCPA?
+    - Tell me about the data privacy policy.
+    - tell me about the data privacy policy.
+
+#Employee Device Usage Policy
+- intent: ask_device_usage
+  examples: |
+    - Can I use my personal device for work?
+    - can I use my personal device for work?
+    - What are the rules for using company devices?
+    - what are the rules for using company devices?
+    - How should I handle company-provided devices?
+    - how should I handle company-provided devices?
+    - Tell me about the device usage policy.
+    - tell me about the device usage policy.
+
+#IT Support Policy
+- intent: ask_it_support
+  examples: |
+    - How do I get IT support?
+    - how do I get IT support?
+    - What should I do if I have a technical issue?
+    - what should I do if I have a technical issue?
+    - How do I report a hardware problem?
+    - how do I report a hardware problem?
+    - Tell me about the IT support policy.
+    - tell me about the IT support policy.
+
+#Non-Disclosure Agreement (NDA) Policy
+- intent: ask_nda
+  examples: |
+    - What is the NDA policy?
+    - what is the NDA policy?
+    - Can I share company information externally?
+    - can I share company information externally?
+    - What are the rules for confidential information?
+    - what are the rules for confidential information?
+    - Tell me about the non-disclosure agreement.
+    - tell me about the non-disclosure agreement.
+
+#Software Use Policy
+- intent: ask_software_use
+  examples: |
+    - Can I install software on my work computer?
+    - Can I install software on my work computer?
+    - What software am I allowed to use?
+    - What software am I allowed to use?
+    - What are the rules for using software?
+    - What are the rules for using software?
+    - Tell me about the software use policy.
+    - Tell me about the software use policy.
+
+#Internet Usage Policy
+- intent: ask_internet_usage
+  examples: |
+    - Can I use social media at work?
+    - can I use social media at work?
+    - What are the rules for internet usage?
+    - what are the rules for internet usage?
+    - Am I allowed to stream videos during work hours?
+    - am I allowed to stream videos during work hours?
+    - Tell me about the internet usage policy.
+    - tell me about the internet usage policy.
+
+######################################################################
+#  Contacting HR/Support
+######################################################################
+
+- intent: ask_contact_hr
+  examples: |
+    - How do I get in touch with the HR team?
+    - how do I get in touch with the HR team?
+    - Is there a number I can call to speak with Human Resources?
+    - is there a number I can call to speak with Human Resources?
+    - I'd like the email address for payroll queries, please.
+    - i'd like the email address for payroll queries, please.
+    - Who should I message if I need to update my personal details?
+    - who should I message if I need to update my personal details?
+    - Is there a helpdesk or ticket system for HR support?
+    - is there a helpdesk or ticket system for HR support?
+    - I'd like to give feedback on my onboarding experience; where do I do that?
+    - i'd like to give feedback on my onboarding experience; where do I do that?
+    - Can you direct me to the correct person for training questions?
+    - can you direct me to the correct person for training questions?
+    - Does HR have an office line I can dial?
+    - does HR have an office line I can dial?
+    - Could you connect me with the person handling employee records?
+    - could you connect me with the person handling employee records?
+    - Where do I file a complaint or report an issue concerning my job?
+    - where do I file a complaint or report an issue concerning my job?
+    - How do I reach the HR department?
+    - how do I reach the HR department?
+    - What are the possible ways to speak with payroll?
+    - what are the possible ways to speak with payroll?
+    - Could you provide an email address for HR inquiries?
+    - could you provide an email address for HR inquiries?

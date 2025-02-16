@@ -1,0 +1,105 @@
+version: "3.1"
+
+rules:
+
+- rule: Greet back when the user greets
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Respond to thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- rule: Respond to happy mood
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+- rule: Respond to unhappy mood
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+- rule: Respond to name
+  steps:
+  - intent: provide_name
+  - action: utter_acknowledge_name
+
+- rule: Respond to asking for details
+  steps:
+  - intent: ask_details
+  - action: utter_provide_id
+
+- rule: Provide employee details
+  steps:
+  - intent: fetch_employee_details
+  - action: action_fetch_employee_details
+
+- rule: Show the leave types
+  steps:
+  - intent: ask_leave_types
+  - action: action_show_leave_types
+
+- rule: Ask code of conduct
+  steps:
+  - intent: ask_code_of_conduct
+  - action: utter_code_of_conduct
+
+- rule: Ask information security
+  steps:
+  - intent: ask_information_security
+  - action: utter_information_security
+
+- rule: Ask remote work policy
+  steps:
+  - intent: ask_remote_work_policy
+  - action: utter_remote_work_policy
+
+- rule: Ask data privacy
+  steps:
+  - intent: ask_data_privacy
+  - action: utter_data_privacy
+
+- rule: Ask device usage
+  steps:
+  - intent: ask_device_usage
+  - action: utter_device_usage
+
+- rule: Ask IT support
+  steps:
+  - intent: ask_it_support
+  - action: utter_it_support
+
+- rule: Ask NDA
+  steps:
+  - intent: ask_nda
+  - action: utter_nda
+
+- rule: Ask software use
+  steps:
+  - intent: ask_software_use
+  - action: utter_software_use
+
+- rule: Ask internet usage
+  steps:
+  - intent: ask_internet_usage
+  - action: utter_internet_usage
+
+- rule: Ask contact HR
+  steps:
+  - intent: ask_contact_hr
+  - action: utter_ask_contact_hr
+
+

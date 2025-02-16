@@ -1,0 +1,181 @@
+version: '3.1'
+
+intents:
+- greet
+- goodbye
+- thanks
+- mood_great
+- mood_unhappy
+- bot_challenge
+- provide_name
+- ask_details
+- provide_id
+- fetch_employee_details
+- ask_update
+- update_employee_details
+- more_updates
+- no_more_updates
+- list_job_positions
+- ask_leave_types
+- ask_code_of_conduct
+- ask_information_security
+- ask_remote_work_policy
+- ask_data_privacy
+- ask_device_usage
+- ask_it_support
+- ask_nda
+- ask_software_use
+- ask_internet_usage
+- ask_contact_hr
+
+
+entities:
+  - person_name
+  - employee_id
+  - field_name
+  - field_value
+
+slots:
+  person_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: person_name
+
+  employee_id:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: employee_id
+
+  field_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: field_name
+
+  field_value:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: field_value
+
+
+
+responses:
+
+  # Basic Intents
+
+  utter_greet:
+  - text: Hi, I’m Rasa’s HR Assistant. What's your name?
+
+  utter_goodbye:
+  - text: Bye
+  - text: Goodbye! Take care.
+  - text: See you later!
+
+  utter_thanks:
+    - text: If you need anything else, let me know.
+
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  - text: 'Everybody has bad days. Here’s something to brighten yours:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+
+  utter_happy:
+  - text: Great, carry on!
+  - text: That's wonderful to hear!
+
+  utter_bot_challenge:
+  - text: I am a bot, powered by Rasa.
+  - text: I am a virtual assistant.
+
+  utter_acknowledge_name:
+  - text: Nice to meet you, {person_name}! What can I do for you?
+
+  utter_provide_id:
+  - text: Please provide the ID of your personal account.
+  - text: Please provide the ID of the employee.
+
+  utter_provide_id_and_update:
+  - text: Please provide the ID of the employee and the update you want to make.
+
+  utter_no_more_updates:
+  - text: Okay. Let me know if you need anything else.
+
+  #Policies
+
+  utter_code_of_conduct:
+  - text: The Code of Conduct policy sets expectations for professional behavior, ensuring a respectful and ethical workplace. All employees must adhere to high standards of ethical conduct, including honesty, integrity, and compliance with company regulations. Harassment, discrimination, and unethical behavior are not tolerated and may lead to disciplinary actions.
+
+  utter_information_security:
+  - text: The Information Security Policy protects company data and systems from unauthorized access, breaches, and misuse. Employees must safeguard confidential and sensitive information, use secure passwords, two-factor authentication, and encryption, and report any security incidents immediately.
+
+  utter_remote_work_policy:
+  - text: The Remote Work Policy provides guidelines for employees working remotely. Employees must maintain regular working hours, ensure clear communication, and use company-owned devices with appropriate security measures like VPNs and updated antivirus software.
+
+  utter_data_privacy:
+  - text: The Data Privacy Policy ensures compliance with data protection regulations like GDPR and CCPA. Employees must handle personal data in accordance with applicable laws, obtain consent where necessary, and report any data breaches immediately.
+
+  utter_device_usage:
+  - text: The Employee Device Usage Policy regulates the use of company-provided and personal devices for work purposes. Company-provided devices must be used responsibly, and personal devices must adhere to company security policies.
+
+  utter_it_support:
+  - text: The IT Support Policy provides guidelines for receiving technical support. Employees must submit a support ticket through the IT service desk for technical issues. High-impact issues are prioritized, and hardware issues should be reported to IT.
+
+  utter_nda:
+  - text: The Non-Disclosure Agreement (NDA) Policy protects confidential company information. Employees must not share proprietary, confidential, or trade secret information with external parties. Violating the NDA may lead to legal consequences and termination.
+
+  utter_software_use:
+  - text: The Software Use Policy regulates the usage of licensed software. Employees must use only company-approved software, and the installation of unauthorized programs is prohibited. IT regularly audits devices for compliance.
+
+  utter_internet_usage:
+  - text: The Internet Usage Policy manages the appropriate use of the company’s internet and network resources. Employees should primarily use the internet for work-related activities, and access to non-work-related websites should be limited.
+
+  # Contacting HR
+
+  utter_ask_contact_hr:
+  - text: You can contact HR at hr@company.com or call +1-234-567-890.
+
+
+actions:
+
+# Utter Actions
+
+- utter_greet
+- utter_goodbye
+- utter_thanks
+- utter_cheer_up
+- utter_happy
+- utter_bot_challenge
+- utter_acknowledge_name
+- utter_provide_id
+- utter_provide_id_and_update
+- utter_no_more_updates
+- utter_code_of_conduct
+- utter_information_security
+- utter_remote_work_policy
+- utter_data_privacy
+- utter_device_usage
+- utter_it_support
+- utter_nda
+- utter_software_use
+- utter_internet_usage
+- utter_ask_contact_hr
+
+# Custom Actions
+
+- action_fetch_employee_details  # API
+- action_update_employee_details  # API
+- action_list_job_positions  # API
+- action_show_leave_types  # Mock-up Action
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

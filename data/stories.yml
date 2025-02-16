@@ -1,0 +1,47 @@
+version: "3.1"
+
+stories:
+
+ - story: Name, ID and Details
+   steps:
+   - intent: provide_name
+   - action: utter_acknowledge_name
+   - intent: ask_details
+   - action: utter_provide_id
+   - intent: provide_id
+   - action: action_fetch_employee_details
+
+ - story: Original Fetch Employee Details
+   steps:
+   - intent: fetch_employee_details
+   - action: action_fetch_employee_details
+
+ - story: Name, ID and Update Details
+   steps:
+   - intent: provide_name
+   - action: utter_acknowledge_name
+   - intent: ask_update
+   - action: utter_provide_id_and_update
+   - intent: update_employee_details
+   - action: action_update_employee_details
+
+ - story: Further Updates
+   steps:
+   - intent: more_updates
+   - action: utter_provide_id_and_update
+   - intent: update_employee_details
+   - action: action_update_employee_details
+   - intent: thanks
+   - action: utter_thanks
+
+ - story: Original Update Employee Details
+   steps:
+   - intent: update_employee_details
+   - action: action_update_employee_details
+
+ - story: List job positions
+   steps:
+   - intent: list_job_positions
+   - action: action_list_job_positions
+
+
